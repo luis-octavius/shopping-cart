@@ -8,7 +8,7 @@ export default function Navbar() {
     return (
         <div className="navbar shadow">
             <div className="logo">
-                <Link to="/" className="link">
+                <Link to="/home" className="link">
                     <img src={shopBagImg} />
                     <h1>Do the Shopping</h1>
                 </Link>
