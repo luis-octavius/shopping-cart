@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+    background-color: var(--color-fourth);
+    width: 100%;
+    height: auto;
+    
+}
