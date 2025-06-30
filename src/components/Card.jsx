@@ -1,0 +1,21 @@
+import './Card.css';
+import shopAdd from '../assets/shopping-cart-add.svg'
+
+export default function Card({product}) {
+    return (
+        <div className="card">
+            <h3>{product.title}</h3> 
+            <div className="container-image">
+                <img className="card-image" src={product.image} />
+            </div>
+            <div className="price-value">
+                <h4><span className="highlight">Price</span>R$ {product.price}</h4>
+                <h4><span className="highlight">Rating</span>{product.rating.rate}</h4>
+                <img className="add-button" src={shopAdd} />
+            </div>
+            <div className="card-description">
+                <p>{product.description}</p>
+            </div>
+        </div>
+    )
+}

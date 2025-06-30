@@ -1,0 +1,47 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    height: 80px;
+    font-family: var(--font-secondary);
+    background-color: var(--color-primary);
+    position: sticky;
+}
+
+.logo a {
+    display: flex;
+    height: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo a > h1 {
+    margin: auto;
+    color: var(--color-secondary);
+    font-style: italic;
+}
+
+.shop-icon, .shop-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.shop-link > * {
+    text-decoration: none;
+    color: var(--color-secondary);
+    font-size: 1.4rem;
+    width: 200px;
+    font-weight: 800;
+}
+
+.shop-icon {
+    padding-right:20px;
+}
+
+.shop-icon img {
+    height: 50px;
+}
+
