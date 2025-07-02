@@ -1,25 +1,20 @@
 import { useState, useEffect } from 'react';
+import { useLoaderData } from 'react-router';
 import PropTypes from 'prop-types';
 import Card from '../components/Card';
 import './Shop.css'
 import Loading from '../components/ui/Loading';
 
 export default function Shop() {
-    const [data, setData] = useState(null);
+    // const [data, setData] = useState(null);
+    const data = useLoaderData();
     const [isLoading, setIsLoading] = useState(true);
     
-    const url = 'https://fakestoreapi.com/products';
-
+    // const url = 'https://fakestoreapi.com/products';
 
     useEffect(() => {
-        fetch(url)
-        .then((response) => response.json())
-        .then((response) => {
-            setData(response);
-            console.log(response);
+            console.log(data);
             setIsLoading(false);
-        })
-        .catch((error) => console.error(error))
     },[isLoading]);
 
     if (isLoading) return (

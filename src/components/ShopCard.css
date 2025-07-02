@@ -1,0 +1,37 @@
+.shop-card {
+    width: 700px;
+    height: 200px;
+    border: 2px solid black;
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.shop-card img {
+    height: auto;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.text-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    font-family: var(--font-primary);
+}
+
+.quantity-div {
+    display: flex;
+}
+
+.number-div {
+    border: 2px solid black;
+    width: 30px;
+    text-align: center;
+}
+
+.quantity-btn {
+    width: 30px;
+}
