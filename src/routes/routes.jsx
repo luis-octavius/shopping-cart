@@ -9,8 +9,13 @@ const routes = [
         path: "/",
         element: <App />,
         errorElement: <ErrorPage />,
+        loader: async () => {
+            const response = await fetch('https://fakestoreapi.com/products');
+            return response.json();
+        },
         children: [
             {
+                index: true,    
                 path: "/home",
                 element: <HomePage />,
                 errorElement: <ErrorPage />,
@@ -19,6 +24,10 @@ const routes = [
                 path: "/shop",
                 element: <Shop />,
                 errorElement: <ErrorPage />,
+                loader: async () => {
+                const response = await fetch('https://fakestoreapi.com/products');
+                return response.json();
+            },
             },
             {
                 path: "/cart",
