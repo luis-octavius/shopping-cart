@@ -3,10 +3,10 @@
 :root {
     --font-primary: "Comic-relief", system-ui;
     --font-secondary: "Inter", sans-serif;
-    --color-primary: rgb(234, 235, 208);
-    --color-secondary: rgb(218, 108, 108);
-    --color-third: rgb(205, 86, 86);
-    --color-fourth: rgb(175, 62, 62);
+    --color-primary: rgb(242, 239, 231);
+    --color-secondary: rgb(154, 203, 208);
+    --color-third: rgb(72, 166, 167);
+    --color-fourth: rgb(0, 106, 113);
 }
 
 #root {
