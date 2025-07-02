@@ -23,7 +23,7 @@ export default function Carousel ({imgs}) {
         slides.forEach(slide => {
             slide.style.display = "none";
         });
-
+        
         dots.forEach(dot => {
             dot.classList.remove("active");
         })
