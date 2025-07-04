@@ -1,8 +1,10 @@
 import './ShopCard.css'
 import { useEffect, useState } from 'react';
+import useStore from '../utils/store';
 
 export default function ShopCard({props}) {
     const [quantity, setQuantity] = useState(0);
+    const { increment, decrement } = useStore();
 
     useEffect(() => {
 
@@ -24,14 +26,16 @@ export default function ShopCard({props}) {
 
     return (
         <div className="shop-card">
-            <img src={props.img} />
+            <img src={props.image} />
             <div className="text-card">
                 <h3>{props.title}</h3>
                 <div className="quantity-div">
                     <button 
                         className="quantity-btn"
-                        onClick={() => handleQuantity('-')}    
-    
+                        onClick={() => { 
+                            handleQuantity('-')
+                            decrement();
+                        }}    
                     >-</button>
                     <div 
                     className="number-div"
@@ -40,7 +44,10 @@ export default function ShopCard({props}) {
                         {quantity}</div>
                     <button 
                         className="quantity-btn"
-                        onClick={() => handleQuantity('+')}    
+                        onClick={() => { 
+                            handleQuantity('+')
+                            increment();
+                        }}    
                     >+</button>
                 </div>
             </div>

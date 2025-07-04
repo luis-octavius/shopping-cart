@@ -12,23 +12,16 @@ import useStore from '../utils/store';
 
 export default function Shop() {
     const data = useContext(UserContext);
+
     const [isLoading, setIsLoading] = useState(true);
-    const [items, setItems] = useState(0);
-    const [productId, setProductId] = useState(0);
+    const { count, products } = useStore();
 
     useEffect(() => {
             console.log(data);
-            console.log("Item: ", items);
+            console.log("Count: ", count);
+            console.log("Products: ", products);
             setIsLoading(false);
-    },[isLoading, items]);
-
-    const handleNumItems = () => {
-        setItems(items + 1);
-    }
-
-    const handleProductId = (id) => {
-        setProductId(id);
-    }
+    },[isLoading, count]);
 
     if (isLoading) return (
         <div className="container-load">
@@ -46,8 +39,6 @@ export default function Shop() {
                 <Card 
                     product={item}
                     key={index}    
-                    changeNumItem={handleNumItems}
-                    onProjectId={handleProductId}
                 />
             ))}
         </div>

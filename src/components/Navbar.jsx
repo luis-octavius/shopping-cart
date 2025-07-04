@@ -3,9 +3,14 @@ import shopImg from '../assets/shopping.svg';
 import shopBagImg from '../assets/shopping-bag.svg';
 import { Link } from 'react-router';
 import { useEffect, useState } from 'react';
+import useStore from '../utils/store';
 
 export default function Navbar() {
-    const [quantity, setQuantity] = useState(0);
+    const { count } = useStore();
+
+    useEffect(() => {
+
+    }, [count])
 
     return (
         <div className="navbar shadow">
@@ -25,8 +30,8 @@ export default function Navbar() {
             <div className="shop-icon">
                 <Link to="/cart" className="cart-shop">
                     <img src={shopImg} />
-                    {quantity !== true && (
-                        <div className="items">{quantity}</div>
+                    {count !== true && (
+                        <div className="items">{count}</div>
                     )}
                 </Link>
             </div>
