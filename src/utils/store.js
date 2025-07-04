@@ -8,7 +8,7 @@ const useStore = create((set) => ({
     decrement: () => set((state) => ({ count: state.count - 1})),
     reset: () => set({ count: 0 }),
     addProduct: (productId) => 
-        set((state) => ({ productId: [...state.products, productId]})),
+        set((state) => ({ products: [...state.products, productId]})),
 }));
 
 export default useStore;
