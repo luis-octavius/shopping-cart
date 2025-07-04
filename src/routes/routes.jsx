@@ -10,8 +10,14 @@ const routes = [
         element: <App />,
         errorElement: <ErrorPage />,
         loader: async () => {
-            const response = await fetch('https://fakestoreapi.com/products');
-            return response.json();
+            try {
+                const response = await fetch('https://fakestoreapi.com/products');
+                if (response.status == 200) {
+                    return response.json();
+                }
+            } catch (err) {
+                console.error(err.message);
+            }
         },
         children: [
             {
@@ -24,10 +30,6 @@ const routes = [
                 path: "/shop",
                 element: <Shop />,
                 errorElement: <ErrorPage />,
-                loader: async () => {
-                const response = await fetch('https://fakestoreapi.com/products');
-                return response.json();
-            },
             },
             {
                 path: "/cart",
