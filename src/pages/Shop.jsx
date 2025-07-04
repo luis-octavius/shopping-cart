@@ -1,21 +1,34 @@
-import { useState, useEffect } from 'react';
-import { useLoaderData } from 'react-router';
+import { 
+    useState, 
+    useEffect,
+    useContext
+} from 'react';
+import { UserContext } from '../utils/UserContext';
 import PropTypes from 'prop-types';
 import Card from '../components/Card';
 import './Shop.css'
 import Loading from '../components/ui/Loading';
+import useStore from '../utils/store';
 
 export default function Shop() {
-    // const [data, setData] = useState(null);
-    const data = useLoaderData();
+    const data = useContext(UserContext);
     const [isLoading, setIsLoading] = useState(true);
-    
-    // const url = 'https://fakestoreapi.com/products';
+    const [items, setItems] = useState(0);
+    const [productId, setProductId] = useState(0);
 
     useEffect(() => {
             console.log(data);
+            console.log("Item: ", items);
             setIsLoading(false);
-    },[isLoading]);
+    },[isLoading, items]);
+
+    const handleNumItems = () => {
+        setItems(items + 1);
+    }
+
+    const handleProductId = (id) => {
+        setProductId(id);
+    }
 
     if (isLoading) return (
         <div className="container-load">
@@ -33,6 +46,8 @@ export default function Shop() {
                 <Card 
                     product={item}
                     key={index}    
+                    changeNumItem={handleNumItems}
+                    onProjectId={handleProductId}
                 />
             ))}
         </div>
