@@ -34,7 +34,6 @@
     justify-content: space-around;
     width: 100%;
     text-align: center;
-
 }
 
 .price-value h4 {
@@ -60,6 +59,7 @@
 
 .highlight {
     display: block;
+    text-align: center;
     color: var(--color-third);
 }
 
