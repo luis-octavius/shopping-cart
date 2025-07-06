@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 30px; */
+    font-family: var(--font-primary);
 }
 
 .shop-items {
@@ -28,7 +28,10 @@
 
 .shop-buy {
     width: 500px;
-    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .value {
@@ -41,4 +44,25 @@
 
 .value p {
     font-size: 2rem;
+}
+
+.empty {
+    font-size: 3rem;
+    margin: auto;
+}
+
+.buy-btn {
+    font-family: var(--font-primary);
+    width: 300px;
+    height: 50px;
+    margin: auto;
+    background-color: var(--color-third);
+    color: var(--color-primary);
+    font-size: 2rem;
+    animation: background-color 2s ease-in-out;
+}
+
+.buy-btn:hover {
+    cursor: pointer;
+    background-color: var(--color-fourth);
 }
