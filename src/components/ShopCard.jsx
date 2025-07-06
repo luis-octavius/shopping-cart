@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import useStore from '../utils/store';
 
 export default function ShopCard({props}) {
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const { increment, decrement } = useStore();
 
     useEffect(() => {
@@ -15,17 +15,17 @@ export default function ShopCard({props}) {
             return;
         } else {
             setQuantity(quantity - 1);
+            decrement();
         }
 
         if (sign == '+') {
-            setQuantity(quantity + 1)
-        }
-
-        
+            setQuantity(quantity + 1);
+            increment();
+        }    
     }
 
     return (
-        <div className="shop-card">
+        <div className="shop-card shadow">
             <img src={props.image} />
             <div className="text-card">
                 <h3>{props.title}</h3>
@@ -34,7 +34,6 @@ export default function ShopCard({props}) {
                         className="quantity-btn"
                         onClick={() => { 
                             handleQuantity('-')
-                            decrement();
                         }}    
                     >-</button>
                     <div 
@@ -46,11 +45,14 @@ export default function ShopCard({props}) {
                         className="quantity-btn"
                         onClick={() => { 
                             handleQuantity('+')
-                            increment();
                         }}    
                     >+</button>
+                    <div className="price-tag">
+                        <p><span className="highlight">Price</span> {props.price}</p>
+                    </div>
                 </div>
             </div>
+                    <button class>Remove</button>
         </div>
     )
 }
