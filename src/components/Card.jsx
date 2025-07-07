@@ -17,6 +17,9 @@ export default function Card({product}) {
                 <img 
                     className="add-button" 
                     src={shopAdd} 
+                    alt="cart with plus sign"
+                    aria-label="Add to Cart"
+                    data-testid="add-button"
                     onClick={() => {
                         increment(); 
                         addProduct(product.id);

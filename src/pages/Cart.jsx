@@ -31,7 +31,7 @@ export default function Cart () {
         <div className="shop">
             <div className="shop-items">
                 {products.length < 1 ? (
-                    <div className="empty">Carrinho Vazio</div>
+                    <div className="empty">Empty...</div>
                 ) : (products.map((index) => (
                     <ShopCard 
                         props={handleProductId(index)} 

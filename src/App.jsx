@@ -11,7 +11,7 @@ function App () {
     <>
       <UserContext.Provider value={data}>
       <Navbar />
-      <div>
+      <div className="outlet">
         <Outlet />
       </div>
       </UserContext.Provider>

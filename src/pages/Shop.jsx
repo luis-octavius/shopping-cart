@@ -14,12 +14,9 @@ export default function Shop() {
     const data = useContext(UserContext);
 
     const [isLoading, setIsLoading] = useState(true);
-    const { count, products } = useStore();
+    const { count } = useStore();
 
     useEffect(() => {
-            console.log(data);
-            console.log("Count: ", count);
-            console.log("Products: ", products);
             setIsLoading(false);
     },[isLoading, count]);
 
@@ -47,5 +44,5 @@ export default function Shop() {
 }
 
 Shop.propTypes = {
-    url: PropTypes.string.isRequired,
+    count: PropTypes.number.isRequired,
 }
