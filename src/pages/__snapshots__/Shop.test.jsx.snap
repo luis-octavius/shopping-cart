@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Shop component > Renders Shop 1`] = `
+<div>
+  <div
+    class="catalog"
+  >
+    <h1>
+      Catalog
+    </h1>
+  </div>
+  <div
+    class="container"
+  />
+</div>
+`;
