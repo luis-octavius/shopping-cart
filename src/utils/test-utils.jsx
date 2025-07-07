@@ -1,10 +1,10 @@
-import { render } from '@testing-library/react';
-import { UserContext } from './UserContext';
-import { useStore } from './store';
-import { vi } from 'vitest';
+import { render } from "@testing-library/react";
+import { UserContext } from "./UserContext";
+import { useStore } from "./store";
+import { vi } from "vitest";
 
-vi.mock('./store', () => ({
-  useStore: vi.fn()
+vi.mock("./store", () => ({
+  useStore: vi.fn(),
 }));
 
 const customRender = (ui, { userValue, storeState, ...options } = {}) => {
@@ -14,7 +14,7 @@ const customRender = (ui, { userValue, storeState, ...options } = {}) => {
       products: [],
       increment: vi.fn(),
       addProduct: vi.fn(),
-      ...storeState
+      ...storeState,
     };
     return selector(state);
   });
@@ -28,5 +28,5 @@ const customRender = (ui, { userValue, storeState, ...options } = {}) => {
   return render(ui, { wrapper: Wrapper, ...options });
 };
 
-export * from '@testing-library/react';
+export * from "@testing-library/react";
 export { customRender as render };

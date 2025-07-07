@@ -1,21 +1,20 @@
 .error {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: grey;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
 }
 
 .error h1 {
-    font-size: 200px;
-    text-align: center;
-    margin: 10px;
+  font-size: 200px;
+  text-align: center;
+  margin: 10px;
 }
 
 .error p {
-    font-size: 40px;
-    text-align: center;
-    margin: 10px;
+  font-size: 40px;
+  text-align: center;
+  margin: 10px;
 }
-

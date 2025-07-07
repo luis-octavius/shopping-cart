@@ -1,21 +1,20 @@
 .home-name {
-    display: block;
-    text-align: center;
-    font-family: var(--font-primary);
-    font-size: 5rem;
-    
+  display: block;
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 5rem;
 }
 
 .shop-name {
-    display: block;
-    transition: opacity 1s ease-in-out linear;
+  display: block;
+  transition: opacity 1s ease-in-out linear;
 }
 
 @keyframes name {
-    0% {
-        opacity: .3;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
